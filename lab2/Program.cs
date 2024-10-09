@@ -27,6 +27,8 @@ namespace TextMessageTest
             IMessageSender sender = new ConsoleMessageSender();
             sender = new SaveMessageDecorator(sender);
             sender = new BlacklistCheckDecorator(sender, blacklist);
+            sender.send(message);
+            sender.send(message2);
 
         }
     }
